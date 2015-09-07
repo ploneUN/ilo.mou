@@ -37,17 +37,17 @@ class Imou(form.Schema, IImageScaleTraversable):
 
     country = schema.TextLine(
            title=_(u"Country"),
-           required=True,
+           required=False,
         )
 
     sector = schema.TextLine(
            title=_(u"Sector"),
-           required=True,
+           required=False,
         )
 
     year_signed = schema.TextLine(
            title=_(u"Year Signed"),
-           required=True,
+           required=False,
         )
 
     write_permission(multifile='cmf.ReviewPortalContent')
