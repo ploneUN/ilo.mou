@@ -35,8 +35,9 @@ class Imou(form.Schema, IImageScaleTraversable):
     mou
     """
 
-    country = schema.TextLine(
+    country = schema.Choice(
            title=_(u"Country"),
+           vocabulary="ilo.mou.country",
            required=False,
         )
 
