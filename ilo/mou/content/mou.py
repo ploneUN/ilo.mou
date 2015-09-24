@@ -36,13 +36,13 @@ class Imou(form.Schema, IImageScaleTraversable):
     """
 
     sender_country = schema.Choice(
-           title=_(u"Country"),
+           title=_(u"Sender Country"),
            vocabulary="ilo.mou.country",
            required=False,
         )
 
     receiving_country = schema.Choice(
-           title=_(u"Country"),
+           title=_(u"Receiving Country"),
            vocabulary="ilo.mou.country",
            required=False,
         )
