@@ -38,13 +38,13 @@ class Imou(form.Schema, IImageScaleTraversable):
     sender_country = schema.Choice(
            title=_(u"Country"),
            vocabulary="ilo.mou.country",
-           required=False,
+           required=True,
         )
 
     receiving_country = schema.Choice(
            title=_(u"Country"),
            vocabulary="ilo.mou.country",
-           required=False,
+           required=True,
         )
 
     sector = schema.TextLine(
@@ -65,6 +65,11 @@ class Imou(form.Schema, IImageScaleTraversable):
             value_type=NamedFile(),
         )
 
+    @invariant
+    def validate_countries(self):
+        if self.receiving_country and self.sender_country:
+            if self.receiving_country == self.sender_country:
+                raise Invalid(u"Same countries are selected on the country fields.")
     pass
 
 alsoProvides(Imou, IFormFieldProvider)
