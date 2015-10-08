@@ -54,10 +54,10 @@ class Imou(form.Schema, IImageScaleTraversable):
            required=True,
         )
 
-    sector = schema.TextLine(
-           title=_(u"Sector"),
-           required=False,
-        )
+#    sector = schema.TextLine(
+#           title=_(u"Sector"),
+#           required=False,
+#        )
 
     year_signed = schema.TextLine(
            title=_(u"Year Signed"),
