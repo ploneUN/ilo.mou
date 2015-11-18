@@ -40,6 +40,11 @@ class ISEC(form.Schema, IImageScaleTraversable):
            required=False,
         )
 
+    source_info = schema.Text(
+           title=_(u"Source"),
+           required=False,
+        )
+
     sender_country = schema.Choice(
            title=_(u"Sending Country"),
            description=_(u"Country of Origin"),
