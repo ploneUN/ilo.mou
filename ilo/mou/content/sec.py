@@ -77,6 +77,57 @@ class ISEC(form.Schema, IImageScaleTraversable):
             value_type=NamedFile(),
         )
 
+    form.fieldset(
+        'contract_conditions',
+        label=u"Contract Conditions",
+        fields=['employment_site','contract_duration','travel_home','min_wage','work_hrs','emp_injury','termination_grounds','dispute_settlmt','addtl_benefits']
+    )
+    
+    employment_site = schema.Text(
+           title=_(u"Site of Employment"),
+           required=False,
+        )
+
+    contract_duration = schema.Text(
+           title=_(u"Contract Duration"),
+           required=False,
+        )
+
+    travel_home = schema.Text(
+           title=_(u"Travel to from Home Country"),
+           required=False,
+        )
+
+    min_wage = schema.Text(
+           title=_(u"Minimum Wage"),
+           required=False,
+        )
+
+    work_hrs = schema.Text(
+           title=_(u"Working Hours"),
+           required=False,
+        )
+
+    emp_injury = schema.Text(
+           title=_(u"Employment Injury Sickness"),
+           required=False,
+        )
+
+    termination_grounds = schema.Text(
+           title=_(u"Grounds for Termination"),
+           required=False,
+        )
+
+    dispute_settlmt = schema.Text(
+           title=_(u"Dispute settlement"),
+           required=False,
+        )
+
+    addtl_benefits = schema.Text(
+           title=_(u"Additional Benefits"),
+           required=False,
+        )
+
     @invariant
     def validate_countries(self):
         if self.receiving_country and self.sender_country:
