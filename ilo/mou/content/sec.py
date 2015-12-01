@@ -64,10 +64,10 @@ class ISEC(form.Schema, IImageScaleTraversable):
            required=False,
         )
 
-    year_signed = schema.TextLine(
-           title=_(u"Year Signed"),
-           required=False,
-        )
+#    year_signed = schema.TextLine(
+#           title=_(u"Year Signed"),
+#           required=False,
+#        )
 
     write_permission(multifile='cmf.ReviewPortalContent')
     form.widget(multifile=MultiFileFieldWidget)
