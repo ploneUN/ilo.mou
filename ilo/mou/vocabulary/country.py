@@ -17,7 +17,10 @@ class Country(grok.GlobalUtility):
         data = []
         vocabs = ISO3166Alpha2CountryVocabulary(context)
         for vocab in vocabs:
-            results.append({'title':vocab.title, 'token':vocab.token, 'value':vocab.value})
+            title = vocab.title
+            if title in ('Hong Kong', 'Taiwan'):
+                title += ' (China)'
+            results.append({'title':title, 'token':vocab.token, 'value':vocab.value})
         if results:
             results.sort(key=lambda k: k['title'])
         for result in results:
