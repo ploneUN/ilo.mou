@@ -137,3 +137,6 @@ class ISEC(form.Schema, IImageScaleTraversable):
     pass
 
 alsoProvides(ISEC, IFormFieldProvider)
+
+noValueMessage = widget.StaticWidgetAttribute(u'----', field=ISEC['receiving_country'])
+zope.component.provideAdapter(noValueMessage, name=u'noValueMessage')
