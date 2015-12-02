@@ -9,7 +9,7 @@ from zope.interface import alsoProvides
 
 from zope.interface import invariant, Invalid
 
-from z3c.form import group, field
+from z3c.form import group, field, widget
 
 from plone.namedfile.interfaces import IImageScaleTraversable
 from plone.namedfile.field import NamedImage, NamedFile
@@ -56,7 +56,7 @@ class ISEC(form.Schema, IImageScaleTraversable):
            title=_(u"Receiving Country"),
            description=_(u"Destination Country"),
            vocabulary="ilo.mou.country",
-           required=True,
+           required=False,
         )
 
     sector = schema.TextLine(
