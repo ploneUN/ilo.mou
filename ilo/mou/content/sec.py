@@ -10,6 +10,7 @@ from zope.interface import alsoProvides
 from zope.interface import invariant, Invalid
 
 from z3c.form import group, field, widget
+import zope
 
 from plone.namedfile.interfaces import IImageScaleTraversable
 from plone.namedfile.field import NamedImage, NamedFile
