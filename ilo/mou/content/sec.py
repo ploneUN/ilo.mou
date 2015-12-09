@@ -50,7 +50,7 @@ class ISEC(form.Schema, IImageScaleTraversable):
            title=_(u"Sending Country"),
            description=_(u"Country of Origin"),
            vocabulary="ilo.mou.country",
-           required=True,
+           required=False,
         )
 
     receiving_country = schema.Choice(
@@ -141,3 +141,6 @@ alsoProvides(ISEC, IFormFieldProvider)
 
 noValueMessage = widget.StaticWidgetAttribute(u'----', field=ISEC['receiving_country'])
 zope.component.provideAdapter(noValueMessage, name=u'noValueMessage')
+
+noValueMessage1 = widget.StaticWidgetAttribute(u'----', field=ISEC['sender_country'])
+zope.component.provideAdapter(noValueMessage1, name=u'noValueMessage')
